@@ -1,3 +1,5 @@
+# Acest cod poate sa detecteze mai multe keypoint-uri diferite pentru o matrice mai precisa a parametriilor intrinseci
+
 import numpy as np
 import cv2
 import yaml
@@ -13,7 +15,7 @@ objp[:,:2] = np.mgrid[0:7,0:6].T.reshape(-1,2)
 objpoints = [] # 3d point in real world space
 imgpoints = [] # 2d points in image plane.
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 found = 0
 while(found < 10):  # Here, 10 can be changed to whatever number you like to choose
     ret, img = cap.read() # Capture frame-by-frame
@@ -45,6 +47,6 @@ ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.sh
 
 data = {'camera_matrix': np.asarray(mtx).tolist(), 'dist_coeff': np.asarray(dist).tolist()}
 
-with open("8-samsung-a53-camera.yaml", "w") as f:
+with open("yaml-files/test-camera-2", "w") as f:
     yaml.dump(data, f)
     
