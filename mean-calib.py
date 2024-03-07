@@ -22,10 +22,10 @@ def calculate_mean_calibration(files):
     return mean_camera_matrix, mean_dist_coeff
 
 # the folder where the yaml files are present
-calib_dir = 'calib-variants/samsung-a53-camera'
+calib_dir = 'calib-variants/iphone-15-promax-alex'
 
 # Adjust the range if you have a different number of files; and adjust the name.yaml
-file_paths = [os.path.join(calib_dir, f'{i}-samsung-a53-camera.yaml') for i in range(1, 10)]
+file_paths = [os.path.join(calib_dir, f'{i}-iphone-15-promax-alex-calib.yaml') for i in range(1, 7)]
 
 mean_camera_matrix, mean_dist_coeff = calculate_mean_calibration(file_paths)
 
