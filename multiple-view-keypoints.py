@@ -47,6 +47,6 @@ ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.sh
 
 data = {'camera_matrix': np.asarray(mtx).tolist(), 'dist_coeff': np.asarray(dist).tolist()}
 
-with open("yaml-files/iphone-15-promax-alex-calib-7", "w") as f:
+with open("calib-variants/iphone-15ProMax-normalCamera/6-iphone-15-promax-alex-calib", "w") as f:
     yaml.dump(data, f)
     
